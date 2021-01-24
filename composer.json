@@ -2,8 +2,15 @@
   "name": "totallywicked/rick-and-morty",
   "description": "The Totally Wicked PHP developer test",
   "type": "project",
-  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Core\\": "core/",
+      "App\\": "app/"
+    }
+  },
   "minimum-stability": "dev",
-  "prefer-stable": true
+  "prefer-stable": true,
+  "require": {
+    "twig/twig": "^2.0"
+  }
 }
-

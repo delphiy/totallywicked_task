@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Rick and Morty{% endblock %}
+
+{% block body %}
+
+<div class="container mt-5">
+    <a href="/"> Home Page </a>
+
+    <div class="row bg-secondary mt-2">
+        <div class="col-md-4 m-0 p-0">
+            <img class="img-fluid" src="{{ character.image }}" alt="{{ character.name }}">
+        </div>
+        <div class="col-md-6 m-0 p-0">
+            <h1 class="text-center mt-5 text-white">{{character.name}}</h1>
+            <h4 class="text-white">{{character.status}} - {{character.species}}</h4>
+            <h4 class="text-white"><span class="small font-weight-bold"> Last known location:</span> <br> <span class="mt-5 ml-4 small">{{character.origin.name}}</span></h4>
+            <h5 class="text-white font-weight-bold">Episodes:</h5>
+            <ul class="text-white">
+                {% for episode in character.episode %}
+                <li>
+                    <u><a href="{{ episode }}" class="text-white" target="_blank">{{ episode }}</a></u>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
